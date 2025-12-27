@@ -1,0 +1,9 @@
+{
+  "type":"module",
+  "dependencies":{
+    "express":"^4",
+    "node-fetch":"^3",
+    "cheerio":"^1",
+    "cors":"^2"
+  }
+}
