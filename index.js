@@ -37,8 +37,11 @@ if (html.toLowerCase().includes("checking your browser")) {
 
     const image =
       $('meta[property="og:image"]').attr("content") ||
+      $('meta[name="twitter:image"]').attr("content") ||
+      $("img#imgBlkFront").attr("src") ||
       $("img").first().attr("src") ||
       "";
+
 
     let priceText =
       $('meta[property="product:price:amount"]').attr("content") ||
