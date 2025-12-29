@@ -18,7 +18,15 @@ app.post("/scrape", async (req, res) => {
       }
     });
 
-    const html = await r.text();
+const html = await r.text();
+
+if (html.toLowerCase().includes("checking your browser")) {
+  return res.json({
+    blocked: true,
+    store: new URL(url).hostname.replace("www.", "")
+  });
+}
+
     const $ = cheerio.load(html);
 
     const title =
